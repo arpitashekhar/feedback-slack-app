@@ -6,7 +6,6 @@ let Feedback = require('../models/feedback');
 router.route('/').get(verifyLogin, (request, response) => {
   Feedback.find({ "email": request.user.username })
   .then(feedbacks => {
-    console.log(feedbacks);
     return response.json(feedbacks);
   })
   .catch(error => response.status(400).json(`Error: ${error}`));
@@ -37,6 +36,8 @@ router.route('/add').post(verifyLogin, (request, response) => {
         }
       ]
     }
+
+    // post the feedback to slack 
     const options = {
       url: slackUrl,
       json: true,
@@ -47,7 +48,6 @@ router.route('/add').post(verifyLogin, (request, response) => {
       if (err) {
         return console.log(err);
       }
-      console.log(body);
     });
   })
   .catch(error => response.status(400).json(`Error: ${error}`));

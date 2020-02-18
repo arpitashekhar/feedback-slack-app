@@ -42,8 +42,7 @@ router.route('/signup').post((request, response) => {
   const username = request.body.username;
   const password = request.body.password;
   const name = request.body.name;
-  console.log(request);
-  console.log(password);
+
   if(!username || !password) {
     return response.status(422).send({ message: 'Please enter valid username and password' });
   }

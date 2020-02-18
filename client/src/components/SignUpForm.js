@@ -22,8 +22,6 @@ class SignUpForm extends Component {
   
   signUp(e) {
     e.preventDefault();
-    console.log("sign up called: ", this.state);
-
     axios.post('/users/signup', {
       "username": this.state.email,
       "password": this.state.password,

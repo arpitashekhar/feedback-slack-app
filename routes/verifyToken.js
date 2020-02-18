@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 // middleware function for verify logged in user
 module.exports = function(request, response, next) {
   const token = request.header('token');
-  console.log(token);
+
   if(!token) {
     return response.status(401).json({ message: 'Access Denied' });
   }

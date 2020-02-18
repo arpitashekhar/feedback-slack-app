@@ -18,12 +18,10 @@ class SignInForm extends Component {
 
   signIn(e) {
     e.preventDefault();
-    console.log("sign in called: ", this.state);
     axios.post('/users/signin', {
       username: this.state.email,
       password: this.state.password
     }).then((response) => {
-      console.log(response);
       if(response.status === 200) {
         localStorage.setItem('login', JSON.stringify({
           loggedIn: true,
