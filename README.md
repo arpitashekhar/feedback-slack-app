@@ -19,7 +19,7 @@ Git
 git clone https://github.com/arpitashekhar/feedback-slack-app.git
 ```
 
-* Set the following environment variables
+* Set the following environment variables to .env file (root folder)
 ```
 * ATLAS_CONNECTION_STRING
 * SECRET_TOKEN
