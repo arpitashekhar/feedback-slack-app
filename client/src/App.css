@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.application-form {
+  width: 100%;
+  background-color: #2E4158;
+  padding: 25px 40px;
+  overflow: auto;
+}
+
+.login-register-switch {
+  margin-bottom: 10%;
+}
+
+.item {
+  background-color: #4C5D72;
+  color: #9DA6B1;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: .9em;
+  border: none;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.active-item {
+  background-color: #5ED0C0;
+  color: white;
+}
+
+.form-center {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  border: 1px solid powderblue;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.form-center div {
+  margin-bottom: 40px;
+}
+
+.form-center .form-field {
+  display: block;
+  font-size: .9em;
+  color: white;
+}
+
+label.form-field {
+  text-transform: uppercase;
+}
+
+input.form-field {
+  width: 100%;
+  background-color: transparent !important;
+  border: none;
+  color: white !important;
+  outline: none;
+  border-bottom: 1px solid #445366;
+  font-size: 1em;
+  font-weight: 300;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+button.form-field {
+  background-color: #5ED0C0;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+table thead {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table td {
+  width: 33%;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+.feedback-btn {
+  background-color: #5ED0C0;
+  color: white;
+}
+
+.link {
+  color: white;
+  float: left;
+  margin: 10px;
+  border: 1px solid #5ED0C0;
+  border-radius: 5px;
+  background-color: #5ED0C0;
+  padding: 10px;
+  text-decoration: none;
+}

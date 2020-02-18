@@ -22,10 +22,10 @@ db_connection.once('open', () => {
 });
 
 // require and use routes
-// const usersRouter = require('./routes/users');
-// const feedbacksRouter = require('./routes/feedbacks');
-// app.use('/users', usersRouter);
-// app.use('/feedbacks', feedbacksRouter);
+const usersRouter = require('./routes/users');
+const feedbacksRouter = require('./routes/feedbacks');
+app.use('/users', usersRouter);
+app.use('/feedbacks', feedbacksRouter);
 
 app.get('/api/passwords', (req, res) => {
   const count = 5;
@@ -43,9 +43,9 @@ app.get('/api/passwords', (req, res) => {
 
 // relative path for static frontend
 // if(process.env.NODE_ENV === 'production') {
-//   app.use(express.static('../build'));
+//   app.use(express.static('client/build'));
 //   app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '..', 'build', 'index.html')); 
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); 
 //   })
 // }
 
