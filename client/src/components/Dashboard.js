@@ -24,7 +24,7 @@ class Dashboard extends Component {
     if(store && store.loggedIn) {
       axios({
         method: 'GET',
-        url: 'http://localhost:5000/feedbacks/',
+        url: '/feedbacks/',
         headers: { token: store.token }
       })
       .then((response) => {

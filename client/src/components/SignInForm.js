@@ -19,7 +19,7 @@ class SignInForm extends Component {
   signIn(e) {
     e.preventDefault();
     console.log("sign in called: ", this.state);
-    axios.post('http://localhost:5000/users/signin', {
+    axios.post('/users/signin', {
       username: this.state.email,
       password: this.state.password
     }).then((response) => {

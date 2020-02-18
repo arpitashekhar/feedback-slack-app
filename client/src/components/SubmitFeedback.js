@@ -40,7 +40,7 @@ class SubmitFeedback extends Component {
     if(store && store.loggedIn) {
       axios({
         method: 'POST',
-        url: 'http://localhost:5000/feedbacks/add',
+        url: '/feedbacks/add',
         headers: { token: store.token },
         data: feedback
       })
