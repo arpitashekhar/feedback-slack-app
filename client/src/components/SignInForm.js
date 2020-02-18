@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
+const Alert = props => (
+  <div className="alert">{props.message}</div>
+)
+
 class SignInForm extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +13,8 @@ class SignInForm extends Component {
       email: '',
       password: '',
       loggedIn: false,
-      store: null
+      store: null,
+      message: ''
     }
 
     this.inputChange = this.inputChange.bind(this);
@@ -31,7 +36,10 @@ class SignInForm extends Component {
         this.setState({ loggedIn: true });
         window.location = '/dashboard';
       }
-    });
+    }).catch((error) => {
+      console.log(error);
+      this.setState({ message: "Invalid username or password" });
+    })
   }
 
   inputChange(e) {
@@ -48,6 +56,7 @@ class SignInForm extends Component {
           <NavLink to="/signup" className="item" activeClassName="active-item">Sign Up</NavLink>
         </div>
         <div className="form-center">
+          {this.state.message!==''?<Alert message={this.state.message}/>:null}
           <form onSubmit={this.signIn}>
             <div>
               <label  className="form-field" htmlFor="email">Email</label>
