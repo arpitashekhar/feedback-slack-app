@@ -44,27 +44,43 @@ class Dashboard extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Link to="/logout" className="link">Log Out</Link>
-        <h1>Welcome! </h1>
-        <br/><br/>
-        <table>
-          <thead>
-            <tr>
-              <td>Comments</td>
-              <td>Experience</td>
-              <td>Submitted</td>
-            </tr>
-          </thead>
-          <tbody>
-            {this.feedbackList()}
-          </tbody>
-        </table>
-        <br/><br/>
-        <Link to="/submitfeedback" className="item feedback-btn">Submit New Feedback</Link>
-      </div>
-    )
+    const feedbackPresent = this.state.feedbacks.length > 0 ? true : false;
+
+    if(feedbackPresent) {
+      return (
+        <div>
+          <Link to="/logout" className="link">Log Out</Link>
+          <h1>Welcome! </h1>
+          <br/><br/>
+            <table>
+              <thead>
+                <tr>
+                  <td>Comments</td>
+                  <td>Experience</td>
+                  <td>Submitted</td>
+                </tr>
+              </thead>
+              <tbody>
+                {this.feedbackList()}
+              </tbody>
+            </table>
+          <br/><br/>
+          <Link to="/submitfeedback" className="item feedback-btn">Submit New Feedback</Link>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <Link to="/logout" className="link">Log Out</Link>
+          <br/><br/>
+          <h1>Welcome! </h1>
+          <br/><br/>
+          <h3>Get Started, you have not submitted any feedbacks yet!</h3>
+          <br/><br/>
+          <Link to="/submitfeedback" className="item feedback-btn">Submit New Feedback</Link>
+        </div>
+      )
+    }
   }
 }
 
