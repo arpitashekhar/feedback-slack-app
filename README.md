@@ -8,9 +8,9 @@ The client-side code was bootstrapped with [Create React App](https://github.com
 
 ### Prerequisites
 
-Node - v13.8.0
-Npm - v6.13.7
-Git
+* Node - v13.8.0
+* Npm - v6.13.7
+* Git
 
 ### Installing (Dev Environment)
 
